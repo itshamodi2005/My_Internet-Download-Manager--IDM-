@@ -4,9 +4,9 @@
 a = Analysis(
     ['my_idm.py'],
     pathex=[],
-    binaries=[],
+    binaries=[('ffmpeg_bin/ffmpeg.exe', 'ffmpeg_bin'), ('ffmpeg_bin/ffprobe.exe', 'ffmpeg_bin')],
     datas=[],
-    hiddenimports=['yt_dlp', 'colorama', 'tqdm'],
+    hiddenimports=[],
     hookspath=[],
     hooksconfig={},
     runtime_hooks=[],

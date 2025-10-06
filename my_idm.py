@@ -3,14 +3,33 @@ import yt_dlp
 from colorama import Fore, Style, init
 from tqdm import tqdm
 
+# Ensure yt-dlp uses local ffmpeg
+yt_dlp.utils.DEFAULT_OUTTMPL = '%(title)s.%(ext)s'
+yt_dlp.utils.postprocessor_opts = {
+    'ffmpeg_location': os.path.join(os.path.dirname(__file__), "ffmpeg_bin")
+}
+
 init(autoreset=True)
 APP_NAME = "Hamodi Internet Download Manager"
 VERSION = "v1.0.0"
 
 def banner():
-    print(Fore.CYAN + "=" * 50)
-    print(Fore.YELLOW + f"{APP_NAME} {VERSION}".center(50))
-    print(Fore.CYAN + "=" * 50 + "\n")
+    print(Fore.CYAN + r"""
+
+.---.  .---.    ____    ,---.    ,---.    ,-----.     ______     .-./`)  ______     ,---.    ,---. 
+|   |  |_ _|  .'  __ `. |    \  /    |  .'  .-,  '.  |    _ `''. \ .-.')|    _ `''. |    \  /    | 
+|   |  ( ' ) /   '  \  \|  ,  \/  ,  | / ,-.|  \ _ \ | _ | ) _  \/ `-' \| _ | ) _  \|  ,  \/  ,  | 
+|   '-(_{;}_)|___|  /  ||  |\_   /|  |;  \  '_ /  | :|( ''_'  ) | `-'`"`|( ''_'  ) ||  |\_   /|  | 
+|      (_,_)    _.-`   ||  _( )_/ |  ||  _`,/ \ _/  || . (_) `. | .---. | . (_) `. ||  _( )_/ |  | 
+| _ _--.   | .'   _    || (_ o _) |  |: (  '\_/ \   ;|(_    ._) ' |   | |(_    ._) '| (_ o _) |  | 
+|( ' ) |   | |  _( )_  ||  (_,_)  |  | \ `"/  \  ) / |  (_.\.' /  |   | |  (_.\.' / |  (_,_)  |  | 
+(_{;}_)|   | \ (_ o _) /|  |      |  |  '. \_/``".'  |       .'   |   | |       .'  |  |      |  | 
+'(_,_) '---'  '.(_,_).' '--'      '--'    '-----'    '-----'`     '---' '-----'`    '--'      '--' 
+                                                                                                   
+
+HamodIDM v1.0.0 - portable build
+""")
+
 
 def download_hook(d):
     """
