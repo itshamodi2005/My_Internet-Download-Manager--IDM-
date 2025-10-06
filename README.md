@@ -6,10 +6,11 @@ This release includes a ready-to-use **Windows executable (.exe)** so you don’
 ---
 
 ## 🚀 Features
-- Download videos in **MP4 format** with best available quality  
+- Download videos in **MP4 format** with the best available quality  
 - No installation required – just run the `.exe` file  
 - Automatically creates a `downloads/` folder  
 - Easy to use terminal interface  
+- Bundled with **ffmpeg**, so no extra setup needed  
 
 ---
 
@@ -29,11 +30,18 @@ This release includes a ready-to-use **Windows executable (.exe)** so you don’
 
 ---
 
-## 🔮 Future Plans
-- Option to download audio only (MP3)  
-- Quality selection (choose between high/medium/low)  
-- Progress bar during downloads  
-- Full GUI version with buttons and input field  
+## 🔧 Technical Details
+- Built with **Python 3.11+**, [yt-dlp](https://github.com/yt-dlp/yt-dlp) and [PyInstaller](https://pyinstaller.org/)  
+- Uses **ffmpeg** internally for audio & video merging  
+- Portable build → works without installing Python or ffmpeg  
+
+---
+
+## 🔒 Safety Note
+Some browsers or antivirus software may warn about `.exe` files from the internet.  
+To verify authenticity:
+- All official builds are available only on this repository’s [Releases](../../releases) page.  
+- You can scan the file on [VirusTotal](https://www.virustotal.com/) for extra peace of mind.  
 
 ---
 
