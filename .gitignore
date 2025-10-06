@@ -1,0 +1,49 @@
+# --- Python standard ---
+__pycache__/
+*.py[cod]
+*.so
+*.egg
+*.egg-info/
+.eggs/
+*.pyo
+*.pyd
+*.pkl
+*.db
+
+# --- Virtual environments ---
+venv/
+env/
+.venv/
+.env/
+
+# --- PyInstaller build outputs ---
+build/
+dist/
+*.spec
+
+# --- Logs & system files ---
+*.log
+*.tmp
+*.swp
+.DS_Store
+Thumbs.db
+
+# --- IDE/editor ---
+.vscode/
+.idea/
+*.code-workspace
+
+# --- Compiled executables / archives ---
+*.exe
+*.dll
+*.bin
+*.zip
+*.tar
+*.gz
+*.7z
+
+# --- Test / coverage ---
+.coverage
+.tox/
+.pytest_cache/
+htmlcov/
