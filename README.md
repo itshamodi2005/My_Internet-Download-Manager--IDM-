@@ -1,47 +1,47 @@
 # Hamodi Internet Download Manager (HamodIDM) 🎬
 
-**Hamodi Internet Download Manager (HamodIDM)** is a simple and lightweight tool to download videos directly from the internet.  
-This release includes a ready-to-use **Windows executable (.exe)** so you don’t need to install Python or any dependencies.
+**Hamodi Internet Download Manager (HamodIDM)** is a simple and portable tool for downloading videos directly from the internet.  
+It comes as a ready-to-use **Windows .exe file** – no Python or extra setup required.
 
 ---
 
 ## 🚀 Features
-- Download videos in **MP4 format** with the best available quality  
-- No installation required – just run the `.exe` file  
-- Automatically creates a `downloads/` folder  
-- Easy to use terminal interface  
-- Bundled with **ffmpeg**, so no extra setup needed  
+- Download videos in **MP4** with the best available quality  
+- No installation needed – just run the `.exe`  
+- Automatically creates a **downloads/** folder  
+- Simple terminal-based interface  
+- Includes **ffmpeg** (no external installation required)  
 
 ---
 
 ## 📥 How to Use (Windows .exe)
 1. Go to the [Releases](../../releases) page.  
-2. Download the latest **`HamodIDM.exe`** file.  
-3. Place the file anywhere on your computer (for example on the Desktop).  
-4. Double-click `HamodIDM.exe` to start the program.  
-5. Paste the video URL when prompted.  
-6. Your video will be saved automatically in a folder named **`downloads/`**.
+2. Download the latest **HamodIDM.exe** (or the zip version).  
+3. If you downloaded the zip, extract it.  
+4. Run `HamodIDM.exe`.  
+5. Paste the video link when prompted.  
+6. The file will be saved inside a **downloads/** folder.  
 
 ---
 
 ## 📂 Output
-- Files are saved in a `downloads/` folder created in the same directory as the `.exe`.  
+- Files are saved in a **downloads/** folder in the same directory as the `.exe`.  
 - Videos are automatically named based on their original title.  
+- ⚠ **Note:** Not all media players support every format. For best results, use **VLC Media Player**.  
 
 ---
 
 ## 🔧 Technical Details
-- Built with **Python 3.11+**, [yt-dlp](https://github.com/yt-dlp/yt-dlp) and [PyInstaller](https://pyinstaller.org/)  
-- Uses **ffmpeg** internally for audio & video merging  
+- Built with **Python 3.11+, yt-dlp, and PyInstaller**  
+- Uses **ffmpeg** internally for merging audio & video  
 - Portable build → works without installing Python or ffmpeg  
 
 ---
 
-## 🔒 Safety Note
-Some browsers or antivirus software may warn about `.exe` files from the internet.  
-To verify authenticity:
-- All official builds are available only on this repository’s [Releases](../../releases) page.  
-- You can scan the file on [VirusTotal](https://www.virustotal.com/) for extra peace of mind.  
+## 🔒 Security
+Windows or antivirus may warn about `.exe` files downloaded from the internet.  
+- All official builds are only published on this repository’s [Releases](../../releases) page.  
+- For extra assurance, you can scan the file on [VirusTotal](https://www.virustotal.com/).  
 
 ---
 
