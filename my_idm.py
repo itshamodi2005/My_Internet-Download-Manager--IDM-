@@ -1,13 +1,23 @@
 import os
 import yt_dlp
+import sys
 from colorama import Fore, Style, init
 from tqdm import tqdm
+import certifi
 
-# Ensure yt-dlp uses local ffmpeg
-yt_dlp.utils.DEFAULT_OUTTMPL = '%(title)s.%(ext)s'
-yt_dlp.utils.postprocessor_opts = {
-    'ffmpeg_location': os.path.join(os.path.dirname(__file__), "ffmpeg_bin")
-}
+def resource_path(rel_path: str) -> str:
+    """
+    Get absolute path to resource inside .exe or when running .py directly.
+    """
+    if getattr(sys, "frozen", False):
+        base_dir = sys._MEIPASS   # PyInstaller temp folder
+    else:
+        base_dir = os.path.dirname(__file__)
+    return os.path.join(base_dir, rel_path)
+
+FFMPEG_DIR = resource_path("ffmpeg_bin") 
+os.environ["PATH"] = FFMPEG_DIR + os.pathsep + os.environ.get("PATH", "")  
+os.environ["SSL_CERT_FILE"] = certifi.where()  
 
 init(autoreset=True)
 APP_NAME = "Hamodi Internet Download Manager"
@@ -55,6 +65,7 @@ def download_video(url, save_path="downloads"):
         'outtmpl': f'{save_path}/%(title)s.%(ext)s',   # file name based on video title
         'format': 'bestvideo+bestaudio/best',          # best quality
         'merge_output_format': 'mp4',                  # save as MP4
+        'ffmpeg_location': FFMPEG_DIR,
         'progress_hooks': [download_hook]              # Show Download hook
     }
 
@@ -72,4 +83,4 @@ if __name__ == "__main__":
     print(Fore.YELLOW + f"\nStarting download... File will be saved in: {save_path}\n")
 
     download_video(video_url, save_path)
-    print(Fore.GREEN + "\Download complete!")
+    print(Fore.GREEN + "\nDownload complete!")
